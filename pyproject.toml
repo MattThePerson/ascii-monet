@@ -9,9 +9,9 @@ packages=["src/ascii_monet"]
 
 [project]
 name = "ascii-monet"
-version = "0.0.4"
+version = "0.0.1"
 authors = [{ name="Matt Stirling", email="stirlingmattmarkus@gmail.com" }]
-description = "A small example package"
+description = "A CLI utility for turning images into colored ascii art in the terminal!"
 readme = "README.md"
 requires-python = ">=3.8"
 classifiers = [
@@ -30,4 +30,4 @@ ascii-monet = "cli:main"
 
 [project.urls]
 Homepage = "https://github.com/MattThePerson/ascii-monet"
-Changelog = "https://github.com/MattThePerson/ascii-monet/CHANGELOG.md"
+Changelog = "https://github.com/MattThePerson/ascii-monet/blob/main/CHANGELOG.md"
