@@ -9,7 +9,7 @@ packages=["src/ascii_monet"]
 
 [project]
 name = "ascii-monet"
-version = "0.0.2"
+version = "0.0.4"
 authors = [{ name="Matt Stirling", email="stirlingmattmarkus@gmail.com" }]
 description = "A CLI utility for turning images into colored ascii art in the terminal!"
 readme = "README.md"
@@ -21,7 +21,9 @@ classifiers = [
 license = "MIT"
 license-files = ["LICEN[CS]E*"]
 dependencies = [
-    "opencv-python==4.11.0.86"
+    "numpy>=2.0.0",
+    "pillow>=10.0.0",
+    "colorama>=0.4.6"
 ]
 
 [project.scripts]

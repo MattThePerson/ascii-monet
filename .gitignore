@@ -1,4 +1,5 @@
-dist/
-tokens/
 vscode/
 __pycache__/
+dist/
+tokens/
+tests/*
