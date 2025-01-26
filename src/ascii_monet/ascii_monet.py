@@ -21,7 +21,7 @@ class ascii_monet:
     stats = False
     
     @classmethod
-    def generate(cls, image_path, custom_chars=None, all_ascii=False, only_alpha=False, only_alpha_num=False, terminal_width=False, terminal_height=False, height=None, width=80, max_height=100, max_width=None, light_background=False, grayscale_mode=False, top_percentile=90, bottom_percentile=5, verbose=False, stats=False):
+    def generate(cls, image_path, custom_chars=None, all_ascii=False, only_alpha=False, only_alpha_num=False, terminal_width=False, terminal_height=False, height=None, width=80, max_height=100, max_width=None, light_background=False, grayscale_mode=False, char_fluctuation=3, top_percentile=90, bottom_percentile=5, verbose=False, stats=False):
         """ Given a path to an image, generates colored ASCII art of the image in the terminal """
 
         cls.verbose = verbose
@@ -61,7 +61,7 @@ class ascii_monet:
         # display ascii image
         for color_row in colors:
             for RGB in color_row:
-                char = cls.getChar(RGB, chars, min_luminance=luminance_bot_perc, max_luminance=luminance_top_perc)
+                char = cls.getChar(RGB, chars, min_luminance=luminance_bot_perc, max_luminance=luminance_top_perc, char_fluct=char_fluctuation)
                 cls.print_colored_text(char, RGB, end='')
             print()
         
@@ -104,8 +104,8 @@ class ascii_monet:
     
     
     @classmethod
-    def getChar(cls, RGB, chars, min_luminance=0, max_luminance=255):
-        max_fluct = 3
+    def getChar(cls, RGB, chars, min_luminance=0, max_luminance=255, char_fluct=3):
+        max_fluct = char_fluct
         luminance = np.mean(RGB)
         idx = math.floor(cls.map_value(luminance, min_luminance, max_luminance, 0, len(chars)-max_fluct-1))
         RGB_mapped = [ int(cls.map_value(int(x), 0, 255, 0, 3)) for x in RGB ]

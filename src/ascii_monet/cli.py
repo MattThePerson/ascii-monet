@@ -27,6 +27,7 @@ def main():
     parser.add_argument('--chars-to-use', '-chars', help='Give a list of chars to use in the image as a string')
     parser.add_argument('--grayscale', '-g', action='store_true', help='Prints image in grayscale')
     parser.add_argument('--light-background', action='store_true', help='Assumes white background when selecting chars')
+    parser.add_argument('--char-fluct', help='Select fluctuation of chars by luminance', type=int, default=3)
     parser.add_argument('--top-perc', help='Select top percentile to use for luminance range', type=int, default=98)
     parser.add_argument('--bottom-perc', help='Select bottom percentile to use for luminance range', type=int, default=5)
 
@@ -84,6 +85,7 @@ def main():
         max_width=args.max_width,
         light_background=args.light_background,
         grayscale_mode=args.grayscale,
+        char_fluctuation=args.char_fluct,
         top_percentile=args.top_perc,
         bottom_percentile=args.bottom_perc,
     )
