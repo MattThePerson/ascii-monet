@@ -8,7 +8,7 @@ Unfortunately, the images don't look great in Windows PowerShell because the dar
 
 ## Install
 
-Package is available on PyPi. Install with:
+Package is available on PyPi (https://pypi.org/project/ascii-monet/). Install with:
 
 `pip install ascii-monet`
 
