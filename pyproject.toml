@@ -9,7 +9,7 @@ packages=["src/ascii_monet"]
 
 [project]
 name = "ascii-monet"
-version = "0.0.4"
+version = "0.0.5"
 authors = [{ name="Matt Stirling", email="stirlingmattmarkus@gmail.com" }]
 description = "A CLI utility for turning images into colored ascii art in the terminal!"
 readme = "README.md"
